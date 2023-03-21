@@ -14,11 +14,11 @@ describe('StarRating', () => {
     });
   });
   describe('rating is not passed', () => {
-    it('does not show the average', () => {
+    it('not show the average', () => {
       const {queryByText} = render(<StarRating />);
       expect(queryByText('4.5')).toBeNull();
     });
-    it('does not show the star icon', () => {
+    it('not show the star icon', () => {
       const {queryByTestId} = render(<StarRating />);
       expect(queryByTestId('starIcon')).toBeNull();
     });
