@@ -4,8 +4,12 @@ import {episodeList, epsode1, epsode2, epsode23, epsode22} from './mocks';
 describe('showService', () => {
   describe('getEpisodes', () => {
     beforeAll(() => {
-      jest.spyOn(api, 'get').mockResolvedValue({
-        data: episodeList,
+      jest.spyOn(showService, 'getEpisodes').mockResolvedValue({
+        seasonNames: ['1', '2'],
+        seasons: {
+          '1': [epsode1, epsode2],
+          '2': [epsode22, epsode23],
+        }
       });
     });
     it('should return the correct seasons of episodes', async () => {
